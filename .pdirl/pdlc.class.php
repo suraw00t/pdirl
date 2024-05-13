@@ -11,7 +11,7 @@ class pdlc {
 			$configuration = array();
 		$conf = $this -> configuration($configuration);
 		$this -> host = $conf['host'];
-		$this -> scriptPath = $conf['scriptpath'];
+		// $this -> scriptPath = $conf['scriptpath'];
 		$this -> scriptPath = $this -> rewriteScriptPath();
 		$this -> ignore = $conf['ignore'];
 		$this -> countElements = $conf['countelements'];
