@@ -30,6 +30,7 @@ class pdlc {
 		// make the path more secure and remove illegal characters
 		$this -> directory = $this -> rewritePath(@$_GET['directory']);
 		$this -> sessionSort();
+		$this -> totalSize = 0;
 	}
 	
 	
@@ -70,7 +71,6 @@ class pdlc {
 		return $configuration;
 	}
 	
-	
 	/**
 	 * Makes path more secure.
 	 * Please try to hack this, I'm not very sure if this is the most secure function
@@ -78,7 +78,7 @@ class pdlc {
 	 */
 	private function rewritePath($path) {
 		$path = './'.$path.'/';
-		if (count($path) > 0) {
+		if (strlen($path) > 0) {
 			if ($path == './') {
 				return '';
 			} else {
@@ -321,7 +321,7 @@ class pdlc {
 	 * @param string $string
 	 * @param string $encoding
 	 */
-	private function iregcase($string,$encoding='auto'){
+	private function iregcase($string,$encoding=null){
 		$max = mb_strlen($string,$encoding);
 		$ret = '';
 		for ($i = 0; $i < $max; $i++) {

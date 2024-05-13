@@ -250,6 +250,7 @@
 		$typesList = array (
 			'audio'		=> 'Audio file',
 			'image'		=> 'Image file',
+			'video'		=> 'Video file',
 			'web'		=> 'Web document',
 			'text'		=> 'Text document',
 			'package'	=> 'Compressed package',

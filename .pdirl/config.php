@@ -18,7 +18,7 @@ $conf = array (
 	 * e.g. for French type 'fr_FR', for Italian 'it_IT' or for Simplified Chinese 'zh_CN' etc.
 	 * If you are running pdirl on ubuntu, run "sudo locale-gen xx_YY.UTF-8", xx = Language, YY = Country
 	 * If you want to use English, fill in 'en_GB' or leave the field blank ''. */
-	'language' => 'en_GB',
+	'language' => 'en_US',
 
 	/* The domain that will be shown in the title and the breadcrumb navigation.
 	 * You can fill in something like "files.yoursite.org"
