@@ -108,7 +108,7 @@
 				<?php if($elements): ?>
 				<p><?php echo sprintf($term, numberOfElements(), $totalSize['number'], $totalSize['unit']);?></p>
 				<?php endif; ?>
-				<p><small>powered by <a href="http://pdirl.newroots.de/">pdirl - PHP Directory Listing</a>.</small></p>
+				<p><small>powered by <a href="http://pdirl.newroots.de/">pdirl - PHP Directory Listing</a>. modified by <a href="https://github.com/suraw00t/pdirl">Gitgub suraw00t/pdirl</a>.</small></p>
 			</div>
 </body>
 </html>
