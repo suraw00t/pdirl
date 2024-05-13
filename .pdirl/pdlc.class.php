@@ -45,8 +45,8 @@ class pdlc {
 		if (!$default) {
 			$default = array(
 				'host' => $_SERVER['HTTP_HOST'],
-				'scriptpath' => $this -> rewriteScriptPath(),
-				'directory' => '',
+				// 'scriptpath' => $this -> rewriteScriptPath(),
+				// 'directory' => '',
 				'ignore' => array("index.php", ".htaccess", ".pdirl"),
 				'countelements' => true,
 				'sort' => array('key' => 'name', 'sort' => "SORT_ASC"),
@@ -94,32 +94,32 @@ class pdlc {
 		return $path;
 	}
 	
-	/**
-	 * Returns current directory path with the directory path in the configuration.
-	 * Because you get a double suffix when you list a subdirectory with pdirl (suffix + path)
-	 * it must be removed.
-	 * @return string
-	 */
-	function stripDoublePrefix ($path = false, $prefix = false) {
-		if (!$path && !$prefix) {
-			return '';
-		} elseif (!$path) {
-			return $prefix;
-		} elseif (!$prefix) {
-			return $path;
-		} else {
-			// double prefix to search and to destroy ;-)
-			$prefixSearch = $prefix.$prefix;
-			// Escape . \ + * ? [ ^ ] ( $ )
-			$prefixSearch = quotemeta($prefixSearch);
-			// Also strip something like '//' and '/./'
-			$prefixSearch = $this -> rewritePath ($prefixSearch);
-			// Escape '/', too
-			$prefixSearch = str_replace('/', '\/', $prefixSearch);
-			// Replace the double prefix with the normal prefix
-			return preg_replace("/^{$prefixSearch}/", $prefix, $this -> rewritePath($prefix.$path));
-		}
-	}
+	// /**
+	//  * Returns current directory path with the directory path in the configuration.
+	//  * Because you get a double suffix when you list a subdirectory with pdirl (suffix + path)
+	//  * it must be removed.
+	//  * @return string
+	//  */
+	// function stripDoublePrefix ($path = false, $prefix = false) {
+	// 	if (!$path && !$prefix) {
+	// 		return '';
+	// 	} elseif (!$path) {
+	// 		return $prefix;
+	// 	} elseif (!$prefix) {
+	// 		return $path;
+	// 	} else {
+	// 		// double prefix to search and to destroy ;-)
+	// 		$prefixSearch = $prefix.$prefix;
+	// 		// Escape . \ + * ? [ ^ ] ( $ )
+	// 		$prefixSearch = quotemeta($prefixSearch);
+	// 		// Also strip something like '//' and '/./'
+	// 		$prefixSearch = $this -> rewritePath ($prefixSearch);
+	// 		// Escape '/', too
+	// 		$prefixSearch = str_replace('/', '\/', $prefixSearch);
+	// 		// Replace the double prefix with the normal prefix
+	// 		return preg_replace("/^{$prefixSearch}/", $prefix, $this -> rewritePath($prefix.$path));
+	// 	}
+	// }
 	
 	/**
 	 * returns a legal script path
@@ -136,20 +136,20 @@ class pdlc {
 	}
 	
 	
-	/**
-	 * script path should'nt be part of current directory path, to prevent double bredcrumbs.
-	 * @return string
-	 */
-	function currentDirectoryOnly($currentDir = false, $scriptPath = false) {
-		if (!$currentDir)
-			$currentDir = $this -> getCurrentDirectory();
-		if (!$scriptPath)
-			$scriptPath = $this -> getScriptPath();
-		if (strpos($currentDir, $scriptPath) === 0)
-			$currentDir = substr_replace($currentDir, "", 0, strlen($scriptPath));
-		else
-			return $currentDir;
-	}
+	// /**
+	//  * script path should'nt be part of current directory path, to prevent double bredcrumbs.
+	//  * @return string
+	//  */
+	// function currentDirectoryOnly($currentDir = false, $scriptPath = false) {
+	// 	if (!$currentDir)
+	// 		$currentDir = $this -> getCurrentDirectory();
+	// 	if (!$scriptPath)
+	// 		$scriptPath = $this -> getScriptPath();
+	// 	if (strpos($currentDir, $scriptPath) === 0)
+	// 		$currentDir = substr_replace($currentDir, "", 0, strlen($scriptPath));
+	// 	else
+	// 		return $currentDir;
+	// }
 	
 	/**
 	 * Returns formatted path, when modrewrite is inactive it will return the path via GET
