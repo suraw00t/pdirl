@@ -71,6 +71,7 @@ class pdlc {
 		return $configuration;
 	}
 	
+	
 	/**
 	 * Makes path more secure.
 	 * Please try to hack this, I'm not very sure if this is the most secure function
@@ -274,7 +275,7 @@ class pdlc {
 		// <https://bugs.launchpad.net/pdirl/+bug/815701>
 		$subtype = "";
 		if(count($mimeType) > 1){
-			$subtype = $mimeType[1]; //获取文件类型 格式名
+			$subtype = $mimeType[1];
 		}
 		$mimeType = array('type' => $mimeType[0], 'subtype' => $subtype);
 
@@ -511,7 +512,6 @@ class pdlc {
 						}
 					    // urlencode on everything except the slashes
 				    	$item['urlpath'] = $this -> encode($item['location'].$item['name']);
-						// print $item['urlpath']."<br />";  //获取URL 链接
 						$stat = array('size' => 0, 'mtime' => 0);
 						$item['numberofelements'] = 0;
 						$item['countonly'] = false;
@@ -533,7 +533,6 @@ class pdlc {
 						}
 						
 						$item['path'] = urlencode($item['path']);
-						//print $item['path']."<br />";
 						$item['name'] = htmlspecialchars($item['name']);
 						$item['locationurl'] = $item['location'];
 						$item['location'] = htmlspecialchars($item['location']);

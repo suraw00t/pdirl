@@ -54,8 +54,8 @@
 				<tbody>
 					<?php foreach($elements as $element): ?>
 						<tr>
-							<td class="name"    
-							<?php //显示内容
+							<td class="name" 
+							<?php 
 							if(!$element['readable']){ 
 								echo 'colspan="3"';
 							} elseif ($element['countonly']) {
@@ -63,20 +63,7 @@
 							} ?> title="<?php echo filetypeInfo($element['type']);?>">
 								<img src="<?php echo iconDirectory();?>/<?php echo $element['type'];?>.png" alt="<?php echo _('Directory');?>" />
 								<?php if(!$element['readable']) { echo imgTagIcon('locked', 'not accessible');} ?>
-						
-								<a href="<?php 
-									//对于mp4文件 进行在线浏览
-									if((strlen($element['urlpath'])>=5)&&strtoupper(substr($element['urlpath'],-4))==".MP4")
-									{
-										$filename=$element['urlpath'];
-										//$filename=str_replace(".","",$element['urlpath']);
-										$filename=str_replace("./","",$element['urlpath']);
-										print "http://player.icorer.com/?v=".base64_encode("http://".host().str_replace("./","/",currentDirectory()).$filename);	
-									}
-									else
-										echo $element['urlpath']; 
-									
-								?>" id="<?php echo $element['name'];?>">
+								<a href="<?php echo $element['urlpath'] ?>" id="<?php echo $element['name'];?>">
 									<?php echo $element['name'];?>
 								</a>
 								<?php if(searchTag() && $element['location']): ?>

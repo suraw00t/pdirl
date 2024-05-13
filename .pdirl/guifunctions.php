@@ -168,7 +168,6 @@
 			}
 			$counter++;
 		}
-		//print $path."<br />";
 		return $path;
 	}
 	
