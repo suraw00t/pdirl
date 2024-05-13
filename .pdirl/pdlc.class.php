@@ -28,7 +28,7 @@ class pdlc {
 //		// strip double prefixes
 		$this -> directory = $this -> stripDoublePrefix(@$_GET['directory'], $this -> directoryPrefix);
 		// make the path more secure and remove illegal characters
-		$this -> directory = $this -> rewritePath(@$_GET['directory']);
+		// $this -> directory = $this -> rewritePath(@$_GET['directory']);
 		$this -> sessionSort();
 		$this -> totalSize = 0;
 	}
