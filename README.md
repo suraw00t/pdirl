@@ -1,4 +1,4 @@
-pdirl
+pdirl (now support php8, depends php plugins: gettext, session, mbstring)
 
 INSTALLATION
 ------------
