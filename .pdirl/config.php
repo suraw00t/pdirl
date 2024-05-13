@@ -102,8 +102,8 @@ $conf = array (
 //	 * If you leave it blank it will dynamicly select the directory that the user requested.
 //	 * It is as I think tecnically impossible to implement a redirection like "/test" to "downloads/test"
 //	 * because you can't implement variables of the config into htaccess */
-//	'directory' => 'examples/',
+	'directory' => '',
 
-//	'scriptpath' => '', // Relative path to this script
+	'scriptpath' => '', // Relative path to this script
 )
 ?>
