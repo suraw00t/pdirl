@@ -8,7 +8,7 @@
 <body>
 	<div id="headerwrap">
 		<div id="header">
-			<h1><?printBreadcrumb();?></h1>
+			<h1><?php printBreadcrumb();?></h1>
 			<form action="<?php echo scriptPath();?>" method="get">
 			<?php // adds the current directory "&directory=blubb/blabl" to the url ?>
 			<input type="hidden" name="directory" value="<?php echo currentDirectory();?>" />
